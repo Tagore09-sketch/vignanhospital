@@ -156,7 +156,7 @@ const About = () => {
               className="photo-placeholder"
               style={{ background: "#ddd" }}
             ></div>
-            <h4>A.Rahul Kumar</h4>
+            <h4>Tagore</h4>
             <p className="role">Founder & Managing Director</p>
             <p>
               An experienced professional with a strong background in marketing,
@@ -213,7 +213,7 @@ const About = () => {
               className="photo-placeholder"
               style={{ background: "#ddd" }}
             ></div>
-            <h4>Tagore</h4>
+            <h4>A.Rahul Kumar</h4>
             <p className="role">Advisor</p>
             <p>
               IIT Bombay Alumnus | Innovator & Educator. Supports scaling health
