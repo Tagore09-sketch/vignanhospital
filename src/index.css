@@ -1,0 +1,166 @@
+/* index.css - Global reset & base styles */
+
+/* ────────────────────────────────────────────────
+   1. CSS Variables (theme colors)
+───────────────────────────────────────────────── */
+:root {
+  --green-main: #2e5d34;
+  --green-dark: #1e4728;
+  --gold: #e2b614;
+  --white: #ffffff;
+  --light-text: #e8f5e9;
+  --gray-light: #f9fafb;
+  --gray-medium: #6b7280;
+  --text-dark: #111827;
+  --text-light: #4b5563;
+
+  --transition: all 0.25s ease;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+}
+
+/* ────────────────────────────────────────────────
+   2. Modern CSS Reset
+───────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background-color: var(--gray-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ────────────────────────────────────────────────
+   3. Element resets & sensible defaults
+───────────────────────────────────────────────── */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* ────────────────────────────────────────────────
+   4. Layout helpers
+───────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* Common section padding */
+.section {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+}
+
+/* ────────────────────────────────────────────────
+   5. Scrollbar (subtle & branded)
+───────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--green-main);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-dark);
+}
+
+/* ────────────────────────────────────────────────
+   6. Selection highlight
+───────────────────────────────────────────────── */
+::selection {
+  background: var(--gold);
+  color: #000;
+}
+
+/* ────────────────────────────────────────────────
+   7. Sticky header support
+───────────────────────────────────────────────── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--green-main);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+/* Optional: prevent content jump when header becomes sticky */
+body.has-scrolled header {
+  box-shadow: var(--shadow-md);
+}

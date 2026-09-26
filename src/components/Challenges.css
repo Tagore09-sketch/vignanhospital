@@ -1,0 +1,95 @@
+.vignan-section {
+  background-color: #2e4a38; /* same dark green as in your image */
+  color: #2e7d32;
+  padding: 60px 20px;
+}
+
+.challenges-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sections-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #e3e8e3; /* light green for title contrast */
+}
+
+.challenges-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1;
+  min-width: 320px;
+}
+
+.columns-title {
+  font-size: 1.55rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #2e7d32; /* lighter green for subheadings */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.challenges-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.challenges-list li {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin-bottom: 16px;
+  padding-left: 32px;
+  position: relative;
+}
+
+.challenges-list li::before {
+  content: "✔";
+  color: #2e7d32; /* light green checkmark */
+  position: absolute;
+  left: 0;
+  font-size: 1.3rem;
+  line-height: 1.65;
+}
+
+/* ────────────────────────────────────────────────
+   Responsive layout
+───────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .challenges-columns {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .sections-title {
+    font-size: 1.9rem;
+  }
+
+  .columns-title {
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .vignan-section {
+    padding: 50px 15px;
+  }
+
+  .sections-title {
+    font-size: 1.75rem;
+  }
+
+  .challenges-list li {
+    font-size: 1rem;
+  }
+}

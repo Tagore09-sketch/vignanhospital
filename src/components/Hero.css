@@ -1,0 +1,164 @@
+.heros {
+  min-height: 90vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)),
+    url("/image1.jpg") center center / cover no-repeat;
+  background-attachment: fixed;
+  background-color: #2e5d34;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 680px;
+  margin: 0;
+  padding: 0 10px;
+  color: white;
+}
+
+.heros h1 {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  line-height: 1.1;
+}
+
+.heros h1 span {
+  color: var(--gold);
+}
+
+.heros p.subtitle {
+  font-size: 1.5rem;
+  margin: 1.5rem 0 2.5rem;
+  max-width: 680px;
+  font-weight: 300;
+  color: white;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0 3rem;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.feature-item i {
+  color: var(--gold);
+  font-size: 1.8rem;
+}
+
+.btn-click {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: #111;
+  border: 2px solid var(--gold);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--green-main);
+}
+
+/* Social Icons */
+.social-icons {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.social-icons a {
+  width: 48px;
+  height: 48px;
+  background: var(--green-main);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: 0.3s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.social-icons a:hover {
+  background: var(--gold);
+  transform: translateY(-4px);
+}
+
+#scrollToTop {
+  background: black;
+  color: white;
+  font-size: 33px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+#scrollToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollToTop:hover {
+  background: #222;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .heros h1 {
+    font-size: 3rem;
+  }
+
+  .heros p.subtitle {
+    font-size: 1.3rem;
+  }
+}

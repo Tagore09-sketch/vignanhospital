@@ -1,0 +1,101 @@
+.why-choose-section {
+  position: relative;
+  min-height: 80vh;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.28)),
+    url("/Wheelchair.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  padding: 60px 5% 60px 8%; /* more padding on left */
+}
+
+.content-wrapper {
+  max-width: 720px;
+  text-align: left;
+}
+
+/* ─── Changed part ──────────────────────────────────────── */
+.title {
+  font-size: clamp(2.8rem, 4vw, 3.2rem); /* bigger than before */
+  font-weight: 650;
+  color: #1e4728; /* darker green */
+  margin-bottom: 1.5rem;
+  line-height: 0.9;
+}
+/* ───────────────────────────────────────────────────────── */
+
+.main-description {
+  font-size: clamp(1.18rem, 2.4vw, 1.38rem);
+  line-height: 1.68;
+  color: #2d3748;
+  margin-bottom: 3.5rem;
+  max-width: 550px;
+  font-weight: 400;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.8rem;
+}
+
+.percentage {
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  font-weight: 900;
+  color: #2e5d34;
+  line-height: 1;
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.stat-text {
+  font-size: clamp(1.15rem, 2.6vw, 1.32rem);
+  color: #4a5568;
+  line-height: 1.5;
+  font-weight: 500;
+  padding-top: 0.6rem;
+}
+
+/* Mobile adjustments - unchanged */
+@media (max-width: 768px) {
+  .why-choose-section {
+    padding: 60px 20px;
+    background-attachment: scroll;
+    min-height: auto;
+  }
+
+  .title {
+    font-size: clamp(2.8rem, 6.5vw, 4rem); /* still big on mobile */
+  }
+
+  .main-description {
+    font-size: 1.2rem;
+  }
+
+  .stat-item {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .percentage {
+    font-size: 3.2rem;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.3rem;
+  }
+
+  .percentage {
+    font-size: 3.6rem;
+  }
+}

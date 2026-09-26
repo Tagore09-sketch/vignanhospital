@@ -1,0 +1,244 @@
+.solutions-title {
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  color: #006d5b;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.solutions-subtitle {
+  font-size: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto 3.5rem;
+  line-height: 1.7;
+  color: #1e4728;
+  text-align: center;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.6rem;
+}
+
+.solution-card {
+  position: relative;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.solution-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
+}
+
+.card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.solution-card:hover .card-bg {
+  opacity: 1;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(46, 93, 52, 0.9);
+  transition: background 0.5s ease;
+  z-index: 1;
+}
+
+.solution-card:hover .card-overlay {
+  background: rgba(46, 93, 52, 0.72);
+}
+
+.solution-card h3 {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 1.18rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 15px;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 1100px) {
+  .solutions-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .solution-card {
+    height: 150px;
+  }
+  .solution-card h3 {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .solutions-section {
+    padding: 60px 15px;
+  }
+  .solutions-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 60px 15px;
+  }
+  .services-title {
+    font-size: 2.6rem;
+  }
+  .service-card {
+    flex: 0 0 85vw;
+  }
+  .card-image {
+    height: 300px;
+  }
+}
+
+.solutions-section {
+  padding: 80px 20px;
+  background: #f9fafb;
+}
+
+.solutions-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.solutions-title {
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  color: #006d5b;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.solutions-subtitle {
+  font-size: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto 3.5rem;
+  line-height: 1.7;
+  color: #1e4728;
+  text-align: center;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.6rem;
+}
+
+.solution-card {
+  position: relative;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.solution-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
+}
+
+.card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.solution-card:hover .card-bg {
+  opacity: 1;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(46, 93, 52, 0.9);
+  transition: background 0.5s ease;
+  z-index: 1;
+}
+
+.solution-card:hover .card-overlay {
+  background: rgba(46, 93, 52, 0.72);
+}
+
+.solution-card h3 {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 1.18rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 15px;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 1100px) {
+  .solutions-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .solution-card {
+    height: 150px;
+  }
+  .solution-card h3 {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .solutions-section {
+    padding: 60px 15px;
+  }
+  .solutions-title {
+    font-size: 2.4rem;
+  }
+}
