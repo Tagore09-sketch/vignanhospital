@@ -4,7 +4,7 @@ import "./Rental.css";
 import Header from "./Header";
 import Appointment from "./Appointment";
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "/api";
 
 export default function Rental() {
   const [showForm, setShowForm] = useState(false);
