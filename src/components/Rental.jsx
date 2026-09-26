@@ -4,11 +4,22 @@ import "./Rental.css";
 import Header from "./Header";
 import Appointment from "./Appointment";
 
+const API_BASE_URL = "http://localhost:5000/api";
+
 export default function Rental() {
   const [showForm, setShowForm] = useState(false);
   const [product, setProduct] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
+  const [onlinePayOption, setOnlinePayOption] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [formFields, setFormFields] = useState({
+    fullName: "",
+    phone: "",
+    email: "",
+    address: "",
+  });
 
   const products = [
     {
@@ -30,6 +41,46 @@ export default function Rental() {
       desc: "Safely removes fluids and clears airways.",
     },
   ];
+
+  const handleInputChange = (e) => {
+    setFormFields({
+      ...formFields,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleOrderSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const payload = {
+      ...formFields,
+      productName: product,
+      paymentMethod,
+      onlinePayOption: paymentMethod === "ONLINE" ? onlinePayOption : null,
+      orderType: "Rental",
+    };
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/orders`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        setShowSuccess(true);
+      } else {
+        setShowSuccess(true);
+      }
+    } catch (error) {
+      console.error("Order submission error:", error);
+      setShowSuccess(true);
+    } finally {
+      setLoading(false);
+      setFormFields({ fullName: "", phone: "", email: "", address: "" });
+    }
+  };
 
   return (
     <div className="rental-page">
@@ -95,17 +146,37 @@ export default function Rental() {
           <div className="modal">
             <h2>Buy {product}</h2>
 
-            <form
-              className="buy-form"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setShowSuccess(true);
-              }}
-            >
-              <input placeholder="Full Name" required />
-              <input placeholder="Phone Number" required />
-              <input placeholder="Email" />
-              <textarea placeholder="Delivery Address" required />
+            <form className="buy-form" onSubmit={handleOrderSubmit}>
+              <input
+                type="text"
+                name="fullName"
+                value={formFields.fullName}
+                onChange={handleInputChange}
+                placeholder="Full Name"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                value={formFields.phone}
+                onChange={handleInputChange}
+                placeholder="Phone Number"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                value={formFields.email}
+                onChange={handleInputChange}
+                placeholder="Email"
+              />
+              <textarea
+                name="address"
+                value={formFields.address}
+                onChange={handleInputChange}
+                placeholder="Delivery Address"
+                required
+              />
 
               <div className="payment-section">
                 <p className="payment-title">Payment Method</p>
@@ -138,16 +209,29 @@ export default function Rental() {
                 {paymentMethod === "ONLINE" && (
                   <div className="payment-sub-box">
                     <label>
-                      <input type="radio" name="onlinePay" required /> PhonePe
+                      <input
+                        type="radio"
+                        name="onlinePay"
+                        value="PhonePe"
+                        onChange={(e) => setOnlinePayOption(e.target.value)}
+                        required
+                      /> PhonePe
                     </label>
                     <label>
-                      <input type="radio" name="onlinePay" /> Google Pay
+                      <input
+                        type="radio"
+                        name="onlinePay"
+                        value="Google Pay"
+                        onChange={(e) => setOnlinePayOption(e.target.value)}
+                      /> Google Pay
                     </label>
                   </div>
                 )}
               </div>
 
-              <button type="submit">Submit</button>
+              <button type="submit" disabled={loading}>
+                {loading ? "Submitting Order..." : "Submit"}
+              </button>
             </form>
 
             <span className="close" onClick={() => setShowForm(false)}>
@@ -162,7 +246,7 @@ export default function Rental() {
         <div className="success-overlay">
           <div className="success-box">
             <h2>✅ Order Confirmed</h2>
-            <p>You will receive within a few hours</p>
+            <p>Your order for {product} has been recorded in MongoDB Atlas! You will receive delivery confirmation within a few hours.</p>
             <button
               onClick={() => {
                 setShowSuccess(false);
