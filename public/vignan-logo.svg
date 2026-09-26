@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE066" />
+      <stop offset="50%" stop-color="#E2B614" />
+      <stop offset="100%" stop-color="#B38B00" />
+    </linearGradient>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A7542" />
+      <stop offset="100%" stop-color="#1E4728" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Outer Emblem Circle/Shield -->
+  <circle cx="100" cy="100" r="92" fill="url(#goldGradient)" filter="url(#dropShadow)" />
+  <circle cx="100" cy="100" r="84" fill="#ffffff" />
+  <circle cx="100" cy="100" r="78" fill="url(#greenGradient)" />
+
+  <!-- Vignan Stylized Star & V Emblem -->
+  <!-- V Shape Wings -->
+  <path d="M 42,60 Q 100,165 158,60 Q 130,95 100,150 Q 70,95 42,60 Z" fill="url(#goldGradient)" />
+  
+  <!-- Central White Medical Cross -->
+  <rect x="88" y="65" width="24" height="60" rx="4" fill="#ffffff" filter="url(#dropShadow)" />
+  <rect x="70" y="83" width="60" height="24" rx="4" fill="#ffffff" filter="url(#dropShadow)" />
+
+  <!-- Inner Gold Cross Accent -->
+  <rect x="94" y="71" width="12" height="48" rx="2" fill="url(#goldGradient)" />
+  <rect x="76" y="89" width="48" height="12" rx="2" fill="url(#goldGradient)" />
+
+  <!-- Top Star Accent -->
+  <polygon points="100,28 104,40 117,40 106,48 110,60 100,52 90,60 94,48 83,40 96,40" fill="url(#goldGradient)" />
+</svg>

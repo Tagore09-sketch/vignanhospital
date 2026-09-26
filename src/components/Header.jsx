@@ -26,7 +26,7 @@ const Header = () => {
     <header>
       <div className="header-container">
         <div className="logo-area">
-          <i className="fa-solid fa-hand-holding-medical logo-icon"></i>
+          <img src="/vignan-logo.svg" alt="Vignan Symbol Logo" className="vignan-logo-img" />
 
           <div className="logo-text">
             <div className="hospital-name">VIGNAN HOSPITAL</div>
